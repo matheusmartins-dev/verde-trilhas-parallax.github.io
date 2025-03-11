@@ -72,8 +72,8 @@ const VideoPlayer = ({ videoSrc, posterSrc, title }: VideoPlayerProps) => {
   };
   
   return (
-    <div className="video-container">
-      <div className="relative">
+    <div className="video-container w-full h-full">
+      <div className="relative aspect-video">
         {!isVideoLoaded && (
           <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
             <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -83,7 +83,7 @@ const VideoPlayer = ({ videoSrc, posterSrc, title }: VideoPlayerProps) => {
         <video 
           ref={videoRef}
           poster={posterSrc}
-          className="w-full rounded-xl"
+          className="w-full h-full rounded-xl object-cover"
           preload="metadata"
         >
           <source src={videoSrc} type="video/mp4" />

@@ -1,5 +1,6 @@
 
 import { MapPin, Mountain, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface TrailCardProps {
   image: string;
@@ -9,9 +10,10 @@ interface TrailCardProps {
   duration: string;
   description: string;
   index: number;
+  id: number;
 }
 
-const TrailCard = ({ image, title, location, difficulty, duration, description, index }: TrailCardProps) => {
+const TrailCard = ({ image, title, location, difficulty, duration, description, index, id }: TrailCardProps) => {
   return (
     <div className="trail-card" style={{ animationDelay: `${index * 0.1}s` }}>
       <div className="relative overflow-hidden h-60">
@@ -41,9 +43,12 @@ const TrailCard = ({ image, title, location, difficulty, duration, description, 
         
         <p className="text-forest-700 mb-4 line-clamp-3">{description}</p>
         
-        <button className="w-full py-2 bg-forest-50 text-forest-700 rounded-lg font-medium transition-colors hover:bg-forest-100 border border-forest-200">
+        <Link 
+          to={`/trilha/${id}`} 
+          className="w-full py-2 bg-forest-50 text-forest-700 rounded-lg font-medium transition-colors hover:bg-forest-100 border border-forest-200 block text-center"
+        >
           Ver Detalhes
-        </button>
+        </Link>
       </div>
     </div>
   );

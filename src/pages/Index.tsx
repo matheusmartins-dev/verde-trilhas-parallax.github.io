@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -6,6 +5,63 @@ import TrailCard from '@/components/TrailCard';
 import VideoPlayer from '@/components/VideoPlayer';
 import Footer from '@/components/Footer';
 import { ChevronRight, ArrowRight, Leaf, Mountain, Shield } from 'lucide-react';
+
+const trails = [
+  {
+    id: 1,
+    image: 'https://images.unsplash.com/photo-1544084944-15c0696583cd?q=80&w=1974&auto=format&fit=crop',
+    title: 'Trilha da Pedra do Telégrafo',
+    location: 'Rio de Janeiro, RJ',
+    difficulty: 'Moderada',
+    duration: '3-4 horas',
+    description: 'Famosa pelas fotos de ilusão de ótica à beira do penhasco, esta trilha oferece vistas deslumbrantes da costa do Rio de Janeiro.'
+  },
+  {
+    id: 2,
+    image: 'https://images.unsplash.com/photo-1536244753933-affb402aef31?q=80&w=1974&auto=format&fit=crop',
+    title: 'Chapada Diamantina',
+    location: 'Bahia, BA',
+    difficulty: 'Difícil',
+    duration: '2-3 dias',
+    description: 'Um dos destinos mais incríveis do Brasil, com cachoeiras, cavernas, montanhas e paisagens de tirar o fôlego.'
+  },
+  {
+    id: 3,
+    image: 'https://images.unsplash.com/photo-1622651723839-35c2e10f87c4?q=80&w=1887&auto=format&fit=crop',
+    title: 'Trilha das Prainhas',
+    location: 'Arraial do Cabo, RJ',
+    difficulty: 'Fácil',
+    duration: '1-2 horas',
+    description: 'Trilha curta que leva a praias paradisíacas de águas cristalinas. Perfeita para iniciantes e famílias.'
+  },
+  {
+    id: 4,
+    image: 'https://images.unsplash.com/photo-1629227071576-1c474e4c3ad5?q=80&w=1974&auto=format&fit=crop',
+    title: 'Trilha do Pico da Neblina',
+    location: 'Amazonas, AM',
+    difficulty: 'Extrema',
+    duration: '5-7 dias',
+    description: 'A trilha para o ponto mais alto do Brasil exige preparo físico e mental. Uma aventura inesquecível na Amazônia.'
+  },
+  {
+    id: 5,
+    image: 'https://images.unsplash.com/photo-1534247555660-d4b8e9c4bd34?q=80&w=1940&auto=format&fit=crop',
+    title: 'Trilha da Janela do Céu',
+    location: 'Minas Gerais, MG',
+    difficulty: 'Moderada',
+    duration: '6-8 horas',
+    description: 'Localizada no Parque Estadual do Ibitipoca, esta trilha leva a uma piscina natural de onde se tem uma vista incrível do céu.'
+  },
+  {
+    id: 6,
+    image: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?q=80&w=2067&auto=format&fit=crop',
+    title: 'Trilha das 7 Praias',
+    location: 'Santa Catarina, SC',
+    difficulty: 'Moderada',
+    duration: '4-5 horas',
+    description: 'Um percurso que passa por sete praias paradisíacas, cada uma com sua beleza única. Uma das melhores trilhas do litoral brasileiro.'
+  }
+];
 
 const Index = () => {
   useEffect(() => {
@@ -26,63 +82,6 @@ const Index = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const trails = [
-    {
-      id: 1,
-      image: 'https://images.unsplash.com/photo-1544084944-15c0696583cd?q=80&w=1974&auto=format&fit=crop',
-      title: 'Trilha da Pedra do Telégrafo',
-      location: 'Rio de Janeiro, RJ',
-      difficulty: 'Moderada',
-      duration: '3-4 horas',
-      description: 'Famosa pelas fotos de ilusão de ótica à beira do penhasco, esta trilha oferece vistas deslumbrantes da costa do Rio de Janeiro.'
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1536244753933-affb402aef31?q=80&w=1974&auto=format&fit=crop',
-      title: 'Chapada Diamantina',
-      location: 'Bahia, BA',
-      difficulty: 'Difícil',
-      duration: '2-3 dias',
-      description: 'Um dos destinos mais incríveis do Brasil, com cachoeiras, cavernas, montanhas e paisagens de tirar o fôlego.'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1622651723839-35c2e10f87c4?q=80&w=1887&auto=format&fit=crop',
-      title: 'Trilha das Prainhas',
-      location: 'Arraial do Cabo, RJ',
-      difficulty: 'Fácil',
-      duration: '1-2 horas',
-      description: 'Trilha curta que leva a praias paradisíacas de águas cristalinas. Perfeita para iniciantes e famílias.'
-    },
-    {
-      id: 4,
-      image: 'https://images.unsplash.com/photo-1629227071576-1c474e4c3ad5?q=80&w=1974&auto=format&fit=crop',
-      title: 'Trilha do Pico da Neblina',
-      location: 'Amazonas, AM',
-      difficulty: 'Extrema',
-      duration: '5-7 dias',
-      description: 'A trilha para o ponto mais alto do Brasil exige preparo físico e mental. Uma aventura inesquecível na Amazônia.'
-    },
-    {
-      id: 5,
-      image: 'https://images.unsplash.com/photo-1534247555660-d4b8e9c4bd34?q=80&w=1940&auto=format&fit=crop',
-      title: 'Trilha da Janela do Céu',
-      location: 'Minas Gerais, MG',
-      difficulty: 'Moderada',
-      duration: '6-8 horas',
-      description: 'Localizada no Parque Estadual do Ibitipoca, esta trilha leva a uma piscina natural de onde se tem uma vista incrível do céu.'
-    },
-    {
-      id: 6,
-      image: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?q=80&w=2067&auto=format&fit=crop',
-      title: 'Trilha das 7 Praias',
-      location: 'Santa Catarina, SC',
-      difficulty: 'Moderada',
-      duration: '4-5 horas',
-      description: 'Um percurso que passa por sete praias paradisíacas, cada uma com sua beleza única. Uma das melhores trilhas do litoral brasileiro.'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-forest-50">
@@ -159,6 +158,7 @@ const Index = () => {
                   duration={trail.duration}
                   description={trail.description}
                   index={index}
+                  id={trail.id}
                 />
               </div>
             ))}
